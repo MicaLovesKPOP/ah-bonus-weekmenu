@@ -108,6 +108,79 @@ RECIPES = [
 }
 ]
 
+
+# Productnamen en verkoopeenheden zoals AH deze in zijn catalogus gebruikt.
+# De echte receptporties blijven zes personen; aankoophoeveelheid kan groter zijn.
+INGREDIENT_OVERRIDES={
+  "boursin-kip-oesterzwammen": {
+    "1 kg kipdijfilet": "2 pakken AH Scharrel kipdijfilet van ca. 480 g",
+    "250 g oesterzwammen": "1 bak AH Biologisch Oesterzwammen van 250 g",
+    "1,5 kg broccoli, bij voorkeur diepvries": "3 zakken AH Broccoliroosjes van 450 g, diepvries (1,35 kg totaal)",
+    "1,5 kg vastkokende aardappelen": "1 zak AH Vastkokende aardappelen van 3 kg (gebruik 1,5 kg)",
+    "300 g Boursin knoflook en fijne kruiden": "2 pakjes Boursin Knoflook & fijne kruiden van 150 g"
+  },
+  "tomaat-aubergine-ragu":{
+    "1 kg gemengd gehakt":"2 pakken AH Gemengd gehakt van 500 g",
+    "1 kg passata":"2 pakken AH Tomaten passata gezeefd van 500 g",
+    "800 g tomatenblokjes uit blik":"2 blikken AH Tomatenblokjes van 400 g",
+    "70 g tomatenpuree":"1 blikje AH Tomatenpuree van 70 g",
+    "100 g zongedroogde tomaten op olie, uitgelekt":"1 pot AH Zongedroogde tomaten van 285 g (gebruik 100 g uitgelekt)",
+    "200 g belegen of oude Goudse kaas":"1 stuk AH Goudse belegen 48+ stuk van ca. 425 g (gebruik 200 g)",
+    "300 g volkoren spaghetti, totaal verdeeld over drie diners":"1 pak AH Biologisch Volkoren spaghetti van 500 g (gebruik 300 g)",
+    "800 g bloemkoolrijst, voor de koolhydraatarme porties":"2 zakken AH Biologisch Bloemkoolrijst van 400 g, diepvries"
+  },
+  "dikke-pompoen-spliterwtensoep":{
+    "500 g gedroogde groene spliterwten":"1 pak Hak Spliterwten gedroogd van 500 g",
+    "900 g pompoenstukjes":"2 zakken AH Biologisch Pompoen stukjes van 450 g",
+    "500 g winterpeen":"1 zak AH Winterpeen van 1 kg (gebruik 500 g)",
+    "3 rookworsten van circa 275 g per stuk":"3 stuks AH Gelderse rookworst van 275 g"
+  }
+}
+
+# AH-productpagina's zijn gecontroleerd op assortimentstitel en verpakking.
+# Een link helpt bij het handmatig "Wissel"-stapje wanneer AH verkeerd suggereert.
+SHOPPING_LINKS={
+ "boursin-kip-oesterzwammen":[
+  ("AH Vastkokende aardappelen, zak 3 kg","https://www.ah.nl/producten/product/wi96050/ah-vastkokende-aardappelen"),
+  ("AH Biologisch Oesterzwammen, bak 250 g","https://www.ah.nl/producten/product/wi588942/ah-biologisch-oesterzwammen"),
+  ("AH Broccoliroosjes, diepvrieszak 450 g × 3","https://www.ah.nl/producten/product/wi226367/broccoliroosjes"),
+  ("AH Scharrel kipdijfilet, circa 480 g × 2","https://www.ah.nl/producten/product/wi197231/ah-scharrel-kipdijfilet"),
+  ("Boursin Knoflook & fijne kruiden, 150 g × 2","https://www.ah.nl/producten/product/wi1983/knoflook-en-fijne-kruiden")
+ ],
+ "tomaat-aubergine-ragu":[
+  ("AH Gemengd gehakt, 500 g × 2","https://www.ah.nl/producten/product/wi561333/ah-gemengd-gehakt"),
+  ("AH Goudse belegen 48+ stuk, circa 425 g","https://www.ah.nl/producten/product/wi59669/ah-goudse-belegen-48-stuk"),
+  ("AH Biologisch Bloemkoolrijst, diepvries 400 g × 2","https://www.ah.nl/producten/product/wi582622/ah-biologisch-bloemkoolrijst")
+ ],
+ "dikke-pompoen-spliterwtensoep":[
+  ("AH Biologisch Pompoen stukjes, 450 g × 2","https://www.ah.nl/producten/product/wi553673/ah-biologisch-pompoen-stukjes"),
+  ("AH Winterpeen, zak 1 kg","https://www.ah.nl/producten/product/wi4076/ah-winterpeen"),
+  ("Hak Spliterwten gedroogd, 500 g","https://www.ah.nl/producten/product/wi163791/hak-spliterwten-gedroogd")
+ ]
+}
+
+for r in RECIPES:
+    by_name=INGREDIENT_OVERRIDES[r["slug"]]
+    existing=set(r["ingredients"])
+    assert set(by_name)<=existing, (r["slug"],set(by_name)-existing)
+    r["ingredients"]=[by_name.get(item,item) for item in r["ingredients"]]
+    if r["slug"]=="boursin-kip-oesterzwammen":
+        r["shop"]="Kook met 1,35 kg broccoli (3 diepvrieszakken à 450 g), niet met 3 verse stronken. De 3 kg vastkokende aardappelen en 250 g biologische oesterzwammen komen uit je persoonlijke Bonus. Controleer of AH de juiste verpakking voorstelt."
+        r["note"]="De recepthoeveelheid aardappelen is 1,5 kg; koop de volledige Bonuszak van 3 kg en gebruik het restant later. Met drie zakken diepvriesbroccoli zijn de groenten nog steeds royaal."
+    if r["slug"]=="tomaat-aubergine-ragu":
+        r["shop"]="AH kan bij 'belegen kaas' jong belegen selecteren. Voor dit gerecht willen we écht belegen kaas, bijvoorbeeld AH Goudse belegen 48+ stuk. AH Biologisch Bloemkoolrijst is de bevroren variant, anders dan de verse 400 g verpakking die tijdelijk uitverkocht kan zijn."
+    if r["slug"]=="dikke-pompoen-spliterwtensoep":
+        r["shop"]="AH Biologisch Pompoen stukjes 450 g, twee stuks, is gunstiger dan drie pakken van 400 g muskaatpompoen. De AH Winterpeen is een zak van 1 kg, geen losse wortel; gebruik de helft en vries het restant in. 'Hak Spliterwten gedroogd' is een herkenbaar product in AH's assortiment."
+
+def product_validation(r):
+    items=SHOPPING_LINKS.get(r["slug"],[])
+    return ('<section class="card"><h2>Controleer deze AH-producten</h2>'
+            '<p>De AH-receptimporter maakt zelf productsuggesties; zelfs bij een exacte naam kan een verkeerde verpakking worden geselecteerd. '
+            'Gebruik zo nodig <strong>Wissel</strong> in AH om een van deze exacte artikelen te kiezen. '
+            'Controleer ook persoonlijke Bonus Box-aanbiedingen en de beschikbaarheid.</p><ul>'
+            +''.join(f'<li><a href="{escape(url,quote=True)}">{escape(name)}</a></li>' for name,url in items)
+            +'</ul></section>')
+
 def page(r):
     url = PUBLIC + "recepten/" + r["slug"] + ".html"
     ld = {
@@ -153,7 +226,7 @@ def page(r):
         + '</ol></section></div>'
         f'<section class="card"><h2>Handige opmerkingen</h2><p>{escape(r["note"])}</p>'
         f'<p class="notice"><strong>Kooptip:</strong> {escape(r["shop"])}</p></section>'
-        '</main><footer>Onafhankelijk recept, niet verbonden aan Albert Heijn. De import '
+        + product_validation(r) + '</main><footer>Onafhankelijk recept, niet verbonden aan Albert Heijn. De import '
         'van specifieke AH-artikelen en Bonusprijzen kan per week verschillen.</footer></body></html>'
     )
 
