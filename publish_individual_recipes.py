@@ -33,7 +33,7 @@ RECIPES = [
 "summary":"Een ruime pan kipdijfilet in een volle knoflook-kruidensaus, met oesterzwammen, veel broccoli en vastkokende aardappelen.",
 "prep":"PT35M","cook":"PT40M","total":"PT1H15M",
 "ingredients":[
-"1 kg kipdijfilet","250 g oesterzwammen","1,5 kg broccoli, bij voorkeur diepvries",
+"770 g kipdijfilet","250 g oesterzwammen","1,5 kg broccoli, bij voorkeur diepvries",
 "1 gele ui","4 tenen knoflook","1,5 kg vastkokende aardappelen",
 "300 g Boursin knoflook en fijne kruiden","250 ml kippenbouillon","1 AH Houdbare halfvolle melk 6-pack (6 × 200 ml; gebruik 150 ml)",
 "1 eetlepel mosterd","2 theelepels sojasaus","1 theelepel gedroogde tijm",
@@ -113,7 +113,7 @@ RECIPES = [
 # De echte receptporties blijven zes personen; aankoophoeveelheid kan groter zijn.
 INGREDIENT_OVERRIDES={
   "boursin-kip-oesterzwammen": {
-    "1 kg kipdijfilet": "2 pakken AH Scharrel kipdijfilet van ca. 480 g",
+    "770 g kipdijfilet": "1 verpakking AH Scharrel kipdijfilet van 770 g",
     "250 g oesterzwammen": "1 bak AH Biologisch Oesterzwammen van 250 g",
     "1,5 kg broccoli, bij voorkeur diepvries": "3 zakken AH Broccoliroosjes van 450 g, diepvries (1,35 kg totaal)",
     "1,5 kg vastkokende aardappelen": "1 zak AH Vastkokende aardappelen van 3 kg (gebruik 1,5 kg)",
@@ -144,7 +144,7 @@ SHOPPING_LINKS={
   ("AH Vastkokende aardappelen, zak 3 kg","https://www.ah.nl/producten/product/wi96050/ah-vastkokende-aardappelen"),
   ("AH Biologisch Oesterzwammen, bak 250 g","https://www.ah.nl/producten/product/wi588942/ah-biologisch-oesterzwammen"),
   ("AH Broccoliroosjes, diepvrieszak 450 g × 3","https://www.ah.nl/producten/product/wi226367/broccoliroosjes"),
-  ("AH Scharrel kipdijfilet, circa 480 g × 2","https://www.ah.nl/producten/product/wi197231/ah-scharrel-kipdijfilet"),
+  ("AH Scharrel kipdijfilet, 770 g × 1","https://www.ah.nl/producten/product/wi197231/ah-scharrel-kipdijfilet"),
   ("Boursin Knoflook & fijne kruiden, 150 g × 2","https://www.ah.nl/producten/product/wi1983/knoflook-en-fijne-kruiden"),
   ("AH Houdbare halfvolle melk 6-pack, 6 × 200 ml","https://www.ah.nl/producten/product/wi130270/ah-houdbare-halfvolle-melk")
  ],
@@ -167,7 +167,7 @@ for r in RECIPES:
     r["ingredients"]=[by_name.get(item,item) for item in r["ingredients"]]
     if r["slug"]=="boursin-kip-oesterzwammen":
         r["shop"]="Kook met 1,35 kg broccoli (3 diepvrieszakken à 450 g), niet met 3 verse stronken. De 3 kg vastkokende aardappelen en 250 g biologische oesterzwammen komen uit je persoonlijke Bonus. Controleer of AH de juiste verpakking voorstelt."
-        r["note"]="De recepthoeveelheid aardappelen is 1,5 kg; koop de volledige Bonuszak van 3 kg en gebruik het restant later. Met drie zakken diepvriesbroccoli zijn de groenten nog steeds royaal."
+        r["note"]="Dit recept gebruikt 770 g kipdijfilet uit één beschikbare verpakking. Dat is voldoende voor deze royale, groenterijke maaltijd. De recepthoeveelheid aardappelen is 1,5 kg; koop de volledige Bonuszak van 3 kg en gebruik het restant later."
     if r["slug"]=="tomaat-aubergine-ragu":
         r["shop"]="AH kan bij 'belegen kaas' jong belegen selecteren. Voor dit gerecht willen we écht belegen kaas, bijvoorbeeld AH Goudse belegen 48+ stuk. AH Biologisch Bloemkoolrijst is de bevroren variant, anders dan de verse 400 g verpakking die tijdelijk uitverkocht kan zijn."
     if r["slug"]=="dikke-pompoen-spliterwtensoep":
