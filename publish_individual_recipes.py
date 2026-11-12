@@ -35,7 +35,7 @@ RECIPES = [
 "ingredients":[
 "1 kg kipdijfilet","250 g oesterzwammen","1,5 kg broccoli, bij voorkeur diepvries",
 "1 gele ui","4 tenen knoflook","1,5 kg vastkokende aardappelen",
-"300 g Boursin knoflook en fijne kruiden","250 ml kippenbouillon","150 ml halfvolle melk",
+"300 g Boursin knoflook en fijne kruiden","250 ml kippenbouillon","1 AH Houdbare halfvolle melk 6-pack (6 × 200 ml; gebruik 150 ml)",
 "1 eetlepel mosterd","2 theelepels sojasaus","1 theelepel gedroogde tijm",
 "1 eetlepel bakolie","1 theelepel citroensap","zwarte peper",
 "1 eetlepel maizena, alleen als de saus te dun blijft"
@@ -130,7 +130,7 @@ INGREDIENT_OVERRIDES={
     "800 g bloemkoolrijst, voor de koolhydraatarme porties":"2 zakken AH Biologisch Bloemkoolrijst van 400 g, diepvries"
   },
   "dikke-pompoen-spliterwtensoep":{
-    "500 g gedroogde groene spliterwten":"1 pak Hak Spliterwten gedroogd van 500 g",
+    "500 g gedroogde groene spliterwten":"1 pak AH Terra Biologisch spliterwten van 500 g",
     "900 g pompoenstukjes":"2 zakken AH Biologisch Pompoen stukjes van 450 g",
     "500 g winterpeen":"1 zak AH Winterpeen van 1 kg (gebruik 500 g)",
     "3 rookworsten van circa 275 g per stuk":"3 stuks AH Gelderse rookworst van 275 g"
@@ -145,7 +145,8 @@ SHOPPING_LINKS={
   ("AH Biologisch Oesterzwammen, bak 250 g","https://www.ah.nl/producten/product/wi588942/ah-biologisch-oesterzwammen"),
   ("AH Broccoliroosjes, diepvrieszak 450 g × 3","https://www.ah.nl/producten/product/wi226367/broccoliroosjes"),
   ("AH Scharrel kipdijfilet, circa 480 g × 2","https://www.ah.nl/producten/product/wi197231/ah-scharrel-kipdijfilet"),
-  ("Boursin Knoflook & fijne kruiden, 150 g × 2","https://www.ah.nl/producten/product/wi1983/knoflook-en-fijne-kruiden")
+  ("Boursin Knoflook & fijne kruiden, 150 g × 2","https://www.ah.nl/producten/product/wi1983/knoflook-en-fijne-kruiden"),
+  ("AH Houdbare halfvolle melk 6-pack, 6 × 200 ml","https://www.ah.nl/producten/product/wi130270/ah-houdbare-halfvolle-melk")
  ],
  "tomaat-aubergine-ragu":[
   ("AH Gemengd gehakt, 500 g × 2","https://www.ah.nl/producten/product/wi561333/ah-gemengd-gehakt"),
@@ -155,7 +156,7 @@ SHOPPING_LINKS={
  "dikke-pompoen-spliterwtensoep":[
   ("AH Biologisch Pompoen stukjes, 450 g × 2","https://www.ah.nl/producten/product/wi553673/ah-biologisch-pompoen-stukjes"),
   ("AH Winterpeen, zak 1 kg","https://www.ah.nl/producten/product/wi4076/ah-winterpeen"),
-  ("Hak Spliterwten gedroogd, 500 g","https://www.ah.nl/producten/product/wi163791/hak-spliterwten-gedroogd")
+  ("AH Terra Biologisch spliterwten, 500 g","https://www.ah.nl/producten/product/wi469875/ah-biologisch-spliterwten")
  ]
 }
 
@@ -170,7 +171,7 @@ for r in RECIPES:
     if r["slug"]=="tomaat-aubergine-ragu":
         r["shop"]="AH kan bij 'belegen kaas' jong belegen selecteren. Voor dit gerecht willen we écht belegen kaas, bijvoorbeeld AH Goudse belegen 48+ stuk. AH Biologisch Bloemkoolrijst is de bevroren variant, anders dan de verse 400 g verpakking die tijdelijk uitverkocht kan zijn."
     if r["slug"]=="dikke-pompoen-spliterwtensoep":
-        r["shop"]="AH Biologisch Pompoen stukjes 450 g, twee stuks, is gunstiger dan drie pakken van 400 g muskaatpompoen. De AH Winterpeen is een zak van 1 kg, geen losse wortel; gebruik de helft en vries het restant in. 'Hak Spliterwten gedroogd' is een herkenbaar product in AH's assortiment."
+        r["shop"]="AH Biologisch Pompoen stukjes 450 g, twee stuks, is gunstiger dan drie pakken van 400 g muskaatpompoen. De AH Winterpeen is een zak van 1 kg, geen losse wortel; gebruik de helft en vries het restant in. De biologische AH Terra-spliterwten zijn met AH Premium voordeliger dan het gewone HAK-pak."
 
 def product_validation(r):
     items=SHOPPING_LINKS.get(r["slug"],[])

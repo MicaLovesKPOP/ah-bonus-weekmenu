@@ -39,3 +39,14 @@ Persoonlijke recepten, publiek bereikbaar als statische webpagina's en via Alber
 - 400 g bloemkoolrijst werd als tijdelijk uitverkocht getoond; verifieer dan het alternatieve diepvriesartikel.
 
 Deze repo is onafhankelijk van Albert Heijn.
+## Melk bij koken
+
+Gebruik voor recepten met kleine hoeveelheden melk bij voorkeur **AH Houdbare halfvolle melk 6-pack, 6 × 200 ml** (https://www.ah.nl/producten/product/wi130270/ah-houdbare-halfvolle-melk), in plaats van 500ml/1L melkpakken. Boursin-kip heeft 150 ml halfvolle melk nodig. Noem het vetgehalte expliciet. Als er al genoeg op voorraad is: niet kopen.
+
+## AH-matching feedback 12 november, 23:29
+
+- De suggestie voor 2 × 480 g AH Scharrel kipdijfilet bleek 1 kg **kipfilet** (verkeerde snit); in de app via *Wissel* corrigeren naar kipdijfilet.
+- AH Biologisch Oesterzwammen van 250 g werd als 150 g gematcht. Let op de hoeveelheid of kies de 250 g Bonus-verpakking.
+- AH Terra Biologisch spliterwten 500 g is met Premium €1,79 en voordeliger dan HAK €2,19; bio is hier een goede optie.
+- AH Biologisch Bloemkoolrijst van 400 g is een prima alternatief als de reguliere 400 g tijdelijk uitverkocht is.
+- Producten die de gebruiker al op voorraad heeft, kunnen in de AH-app uitgevinkt worden.
