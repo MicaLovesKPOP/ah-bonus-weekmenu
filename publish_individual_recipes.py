@@ -95,7 +95,7 @@ RECIPES = [
 "3 rookworsten van circa 275 g per stuk","1 eetlepel bakolie","zwarte peper"
 ],
 "steps":[
-"Spoel de spliterwten. Schil winterpeen en knolselderij; was de preien grondig en snijd alle groenten grof. Snipper de uien en hak de knoflook. Nette kleine blokjes zijn niet nodig: alles wordt straks gepureerd.",
+"Spoel de spliterwten in een zeef. Schil de 500 g winterpeen en snijd in stukken van ongeveer 2-3 cm. Schil de hele knolselderij grondig (ook de harde, knobbelige onderkant), verwijder lelijke plekken en snijd het vruchtvlees in blokken van 2-3 cm; gebruik ongeveer 500-650 g na schillen. Was de preien goed tussen de bladeren en snijd in ringen van 1-2 cm. Snipper de twee uien grof en hak de knoflook fijn. De pompoenstukjes zijn al gesneden. Geen hele wortels of een hele knolselderij in de pan: alles moet in stukken zodat het gelijkmatig gaart en straks makkelijk te pureren is.",
 "Verhit de olie in een grote soeppan van minstens 7 liter. Fruit de ui 5 minuten, voeg de knoflook toe en bak 1 minuut mee.",
 "Voeg spliterwten, pompoen, winterpeen, prei, knolselderij, 2 liter water, bouillonblokjes, laurier, tijm en gerookt paprikapoeder toe.",
 "Breng rustig aan de kook, zet het vuur laag en laat met het deksel op een kier circa 90-110 minuten sudderen tot de spliterwten uit elkaar vallen. Roer elke 15-20 minuten en voeg alleen wat heet water toe als de soep dreigt aan te bakken.",
