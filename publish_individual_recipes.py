@@ -184,6 +184,19 @@ def product_validation(r):
 
 def page(r):
     url = PUBLIC + "recepten/" + r["slug"] + ".html"
+    scale_note = ""
+    if r["slug"] == "dikke-pompoen-spliterwtensoep":
+        scale_note = ('<section class="card"><h2>Voor jouw kleine pannen (2 × 2,25 liter)</h2>'
+            '<p><strong>Maak per kookbeurt de helft van het grote recept, verdeeld over beide 2,25-literpannen.</strong> '
+            'De volledige hoeveelheid past niet veilig in één van jouw pannen of in je wok van maximaal 3 liter. '
+            'Neem <strong>per pan:</strong> 125 g droge spliterwten, 225 g pompoen, 125 g winterpeen, circa 95 g prei, '
+            '125–160 g geschilde knolselderij, een halve ui, een halve tot één teen knoflook en aanvankelijk 450–500 ml water. '
+            'Verdeel de helft van alle overige kruiden en bouillon over beide pannen. Laat zacht sudderen en voeg '
+            'alleen indien nodig water toe. Houd bij voorkeur minstens 0,5 liter ruimte tot de rand over. '
+            'Pureer na ongeveer 90–110 minuten en voeg op het einde in totaal ongeveer 1,5 rookworst toe, '
+            'verdeeld over beide pannen, als er genoeg ruimte is. De overgebleven ingrediënten zijn voor een '
+            'tweede kookbeurt. <strong>De onderstaande hoofdingrediënten en stappen beschrijven het volledige recept '
+            'voor een pan van minstens 7 liter; verdubbel bij jouw pannen dus niet!</strong></p></section>')
     ld = {
         "@context":"https://schema.org",
         "@type":"Recipe",
@@ -219,7 +232,7 @@ def page(r):
         '<a href="https://www.ah.nl/allerhande/favorieten">Mijn AH recepten</a></nav>'
         f'<p class="notice"><strong>Importeren in AH:</strong> Open Mijn Allerhande favorieten → + → <strong>Extern recept</strong> '
         f'en plak de URL van deze pagina. Controleer de herkende AH-producten en hoeveelheden voordat je ze toevoegt.</p>'
-        '<div class="two"><section class="card"><h2>Ingrediënten</h2>'
+        + scale_note + '<div class="two"><section class="card"><h2>Ingrediënten</h2>'
         f'<p class="sublabel">Voor 6 royale porties • {escape(r["total"])}</p>'
         '<ul>' + "".join(f"<li>{escape(x)}</li>" for x in r["ingredients"]) + '</ul></section>'
         '<section class="card"><h2>Bereiding</h2><ol>'
